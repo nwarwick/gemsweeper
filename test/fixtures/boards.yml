@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Raspberry
+  author_email: raspberry@test.com
+  layout: []
+
+two:
+  name: Blueberry
+  author_email: blueberry@test.com
+  layout: []

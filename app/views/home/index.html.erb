@@ -1,0 +1,16 @@
+<div class="container container--sm">
+  <h1 class="home__title">Gemsweeper</h1>
+  <p class="home__subtitle">
+    It's like Minesweeper but with gems.
+  </p>
+  <div class="home__gem">💎</div>
+  <div class="home__list-header">
+    <h2>Recent Boards</h2>
+    <%= link_to "New Board", new_board_path %>
+  </div>
+  <ul class="board__list">
+    <%= render partial: 'shared/board', collection: @last_ten_boards %>
+  </ul>
+
+  <%= link_to 'View all generated boards', boards_path %>
+</div>

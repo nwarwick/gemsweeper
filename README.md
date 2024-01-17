@@ -1,24 +1,27 @@
-# README
+# Gemsweeper
+It's like Minesweeper, but with gems.
+Check it out [here!](https://gemsweeper-432d70138caa.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Local Setup
+1. Clone the repository
+1. `bundle install`
+1. `rails db:setup`
+1. `rails s`
 
-Things you may want to cover:
+## Deploying to Heroku
+Please follow the outlined steps to deploy to Heroku. You will need to have the Heroku CLI installed.
+From within the project directory: 
+1. `heroku login`
+2. `heroku create <unique-app-name>` - replace `<unique-app-name>` with a unique name for your app
+3. `heroku git:remote -a <unique-app-name>`
+4. `git push heroku main`
+5. `heroku run rails db:migrate db:seed -a <unique-app-name>`
 
-* Ruby version
+## Bonus Work
+- Pagination
+- Test coverage
+- Pre-generated board HMTL
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Notes
+- The Tile object was added to favour readability over performance. We could remove this PORO and just keep tiles as a plain hash to improve performance.
+- In the future, for extremely large boards we could offload the board generation to a job.

@@ -1,9 +1,11 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+standard_board = BoardGenerator.generate(height: 10, width: 10, number_of_gems: 3)
+large_board = BoardGenerator.generate(height: 100, width: 100, number_of_gems: 20)
+rectangular_board = BoardGenerator.generate(height: 20, width: 10, number_of_gems: 4)
+
+Board.create!(name: "Standard Board", author_email: "joe.standard@test.com", layout: standard_board)
+Board.create!(name: "Large Board", author_email: "joe.large@test.com", layout: large_board)
+Board.create!(name: "Rectangular Board", author_email: "joe.rectangle@test.com", layout: rectangular_board)
+
+20.times do
+  Board.create!(name: "Duplicate Board", author_email: "joe.duplicate@test.com", layout: standard_board, created_at: 1.days.ago)
+end

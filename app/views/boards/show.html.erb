@@ -1,0 +1,14 @@
+<div class="container container--sm">
+  <p style="color: green"><%= notice %></p>
+  <div class="board__grid">
+    <%= @board.layout_html.html_safe %>
+  </div>
+  <div class="board-show__info">
+    <div class="board__name">
+      <%= @board.name %>
+    </div>
+    <div class="board__author"><span class="bold">Author:</span> <%= @board.author_email %></div>
+    <div class="board__created-at"><span class="bold">Created:</span> <%= @board.created_at.strftime("%B %e, %Y") %></div>
+    <%= link_to "Back to boards", boards_path %>
+  </div>
+</div>

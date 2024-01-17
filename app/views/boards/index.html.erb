@@ -1,0 +1,9 @@
+<div class="container container--sm">
+  <p style="color: green"><%= notice %></p>
+  <h1>Boards</h1>
+  <ul class="board__list">
+    <%= render partial: 'shared/board', collection: @boards %>
+  </ul>
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  <%= link_to "Back to home", root_path %>
+</div>
